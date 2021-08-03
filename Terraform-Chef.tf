@@ -11,7 +11,7 @@ resource "aws_vpc" "default" {
 
 
 resource "aws_security_group" "Terraform-Chef" {
-  name        = "hashitalks"
+  name        = "Terraform-Chef"
   description = "Used in the terraform"
   vpc_id      = aws_vpc.default.id
 

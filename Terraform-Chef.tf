@@ -8,7 +8,8 @@ resource "aws_instance" "web1" {
    
  }
 
-data "local_file" "foo" {
-    filename = "C:\Users\abishek.k.r\Key-pair\Linux_Terraform-Chef.ppk"
+resource "local_file" "foo" {
+    content     = "foo!"
+    filename = "${path.module}/foo.bar"
 }
 

@@ -8,8 +8,6 @@ resource "aws_instance" "web1" {
    
  }
 
-resource "local_file" "foo" {
-    content     = "foo!"
+data "local_file" "foo" {
     filename = "${path.module}/foo.bar"
 }
-

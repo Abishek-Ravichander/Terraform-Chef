@@ -2,7 +2,7 @@ pipeline {
 environment {
         AWS_ACCESS_KEY_ID     = credentials('ABI_ACCESS_KEY')
         AWS_SECRET_ACCESS_KEY = credentials('ABI_SECRECT_KEY')
-        AWS_DEFAULT-REGION = "us-east-1"
+        AWS_DEFAULT_REGION = "us-east-1"
     }
 agent  any
 stages {

@@ -9,5 +9,5 @@ resource "aws_instance" "web1" {
  }
 
 data "local_file" "foo" {
-    filename = "${path.module}/foo.bar"
+    filename = "${path.module}/foooo.bar"
 }

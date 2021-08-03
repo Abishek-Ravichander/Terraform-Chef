@@ -2,13 +2,13 @@ resource "aws_instance" "web1" {
    ami           = "ami-03295ec1641924349"
    instance_type = "t2.micro"
    count = 1
-   security_groups = [aws_security_group.elb.id]
+   security_groups = [aws_security_group.Terraform-Chef.id]
  }
 
 resource "aws_security_group" "Terraform-Chef" {
   name        = "hashitalks"
   description = "Used in the terraform"
-  vpc_id      = aws_vpc.default.id
+  
 
   # SSH access from anywhere
   ingress {

@@ -13,7 +13,7 @@ resource "aws_instance" "web1" {
 resource "aws_security_group" "Terraform-Chef" {
   name        = "Terraform-Chef"
   description = "Used in the terraform"
-  vpc_id      = "172.31.0.0/16"
+  vpc_id      = "vpc-b2d8bfcf"
 
   # SSH access from anywhere
   ingress {

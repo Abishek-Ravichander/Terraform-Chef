@@ -19,6 +19,7 @@ provisioner "remote-exec" {
     user     = "ec2-user"
     password = ""
     private_key = "${path.module}/Linux_Terraform-Chef.ppk"
+    host = self.public_ip
   }
   }
       

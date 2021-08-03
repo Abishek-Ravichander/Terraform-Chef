@@ -3,7 +3,7 @@ environment {
         AWS_ACCESS_KEY_ID     = credentials('ABI_ACCESS_KEY')
         AWS_SECRET_ACCESS_KEY = credentials('ABI_SECRECT_KEY')
     }
-
+agent  any
 stages {
         stage('checkout') {
             steps {

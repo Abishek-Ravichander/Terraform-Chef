@@ -10,7 +10,7 @@ stages {
                  script{
 
                         
-                            git "https://github.com/Abishek-Ravichander/aws-instance-first-script-new.git"
+                            git "https://github.com/Abishek-Ravichander/Terraform-Chef.git"
                         
                     }
                 }

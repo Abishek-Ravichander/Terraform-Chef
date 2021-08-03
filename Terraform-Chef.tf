@@ -2,7 +2,7 @@ resource "aws_instance" "web1" {
    ami           = "ami-03295ec1641924349"
    instance_type = "t2.micro"
    count = 1
-   security_groups = [aws_security_group.Terraform-Chef.id]
+   vpc_security_group_ids = [aws_security_group.Terraform-Chef.id]
  }
 
 #resource "aws_vpc" "default" {

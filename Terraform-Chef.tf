@@ -5,10 +5,15 @@ resource "aws_instance" "web1" {
    security_groups = [aws_security_group.Terraform-Chef.id]
  }
 
+resource "aws_vpc" "default" {
+  cidr_block = "172.31.0.0/16"
+}
+
+
 resource "aws_security_group" "Terraform-Chef" {
   name        = "hashitalks"
   description = "Used in the terraform"
-  
+  vpc_id      = aws_vpc.default.id
 
   # SSH access from anywhere
   ingress {

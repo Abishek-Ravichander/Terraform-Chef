@@ -9,9 +9,13 @@ resource "aws_instance" "web1" {
 provisioner "remote-exec" {
     inline = [    
        "wget -O /tmp/chef.rpm https://packages.chef.io/files/stable/chef-workstation/20.7.96/el/7/chef-workstation-20.7.96-1.el7.x86_64.rpm",
+       "rpm -ivh chefdk-0.11.2-1.el7.x86_64.rpm",
+       "ls -l /opt/chefdk/",
+       "chef verify",
+       "chef --version",
        "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23",
        "chef-client -v",   
-       "which chef",
+       
     ]
       
       connection {

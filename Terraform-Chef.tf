@@ -6,10 +6,11 @@ resource "aws_instance" "web1" {
    key_name               = "Linux_Terraform-Chef"
    user_data = <<EOF
                #! /bin/bash
-               echo "<h1>Installing Chef</h1>" | curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23
+               echo "<h1>Installing Chef</h1>" | 
    
 provisioner "remote-exec" {
-    inline = [      
+    inline = [    
+       "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23",
        "chef verify",
        "chef --version"
     ]

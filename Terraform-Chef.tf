@@ -7,9 +7,7 @@ resource "aws_instance" "web1" {
    
 provisioner "remote-exec" {
     inline = [
-      "wget https://packages.chef.io/stable/el/7/chefdk-0.11.2-1.el7.x86_64.rpm",
-       "rpm -ivh chefdk-0.11.2-1.el7.x86_64.rpm",
-       "ls -l /opt/chefdk/",
+      "wget https://packages.chef.io/stable/el/7/chefdk-0.11.2-1.el7.x86_64.rpm",       
        "chef verify",
        "chef --version"
     ]

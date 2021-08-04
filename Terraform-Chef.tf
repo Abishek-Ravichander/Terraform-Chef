@@ -13,6 +13,9 @@ provisioner "remote-exec" {
        "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23",
        "chef-client -v",
        "which chef",
+       "sudo yum update -y",
+       "sudo yum install git -y",
+       "git version",
        
     ]
       

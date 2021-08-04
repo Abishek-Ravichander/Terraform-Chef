@@ -18,8 +18,9 @@ provisioner "remote-exec" {
        "git version",
        "mkdir mygit",
        "cd mygit",
-       "git clone https://github.com/Abishek-Ravichander/Stater_Kit.git"
-       
+       "git clone https://github.com/Abishek-Ravichander/Stater_Kit.git",
+       "cd Stater_Kit",
+       "unzip chef-starter",      
     ]
       
       connection {

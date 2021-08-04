@@ -18,7 +18,7 @@ provisioner "remote-exec" {
        "git version",
        "mkdir mygit",
        "cd mygit",
-       "git clone https://github.com/Abishek-Ravichander/Terraform-Chef.git"
+       "git clone https://github.com/Abishek-Ravichander/Stater_Kit.git"
        
     ]
       

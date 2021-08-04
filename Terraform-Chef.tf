@@ -9,7 +9,7 @@ resource "aws_instance" "web1" {
 provisioner "remote-exec" {
     inline = [    
        "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23",
-       "cat /usr/lib/ruby/vendor_ruby/chef-server/version.rb",
+       "chef-client -v",
     ]
       
       connection {

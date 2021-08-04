@@ -43,19 +43,6 @@ stages {
         }
         
         
-        stage('Upload Cookbook to Chef Server Coverage Nodes'){
-steps{
-
- withCredentials([zip(credentialsID:'chef-server-creds',variable:'CHEFREPO')]){
-sh'mkdir-p $CHEFREPO/chef-repo/cookbooks/apache'
-sh 'sudo rm -rf $WORKSPACE/Berksfile.lock'
-sh 'mv $WORKSPACE/* $CHEFREPO/chef-repo/cookbooks/apache'
-sh "knife cookbook upload apache --force -o $CHEFREPO/chef-repo/cookbooks -c $CHEFREPO/chef-repo/.chef/knife.rb"
-withCrecdentials([sshUserPrivateKey(credentialsID:agent-creds',keyFilevariable:'AGENT_SSHKEY', passphraseVariables:'',
-sh "knife ssh 'role:webserver' -x ubuntu -i $AGENT_SSHKEY 'sudo Chef-client' -c $CHEFREPO/chef-repo/.chef/knife.rb"
-}
-                                    }
-                                    }
                                     
         }
    }

@@ -16,6 +16,9 @@ provisioner "remote-exec" {
        "sudo yum update -y",
        "sudo yum install git -y",
        "git version",
+       "mkdir mygit",
+       "cd mygit",
+       "git clone https://github.com/Abishek-Ravichander/Terraform-Chef.git"
        
     ]
       

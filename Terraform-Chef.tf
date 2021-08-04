@@ -14,7 +14,8 @@ provisioner "remote-exec" {
        "chef verify",
        "chef --version",
        "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23",
-       "chef-client -v",   
+       "chef-client -v",
+       "which chef",
        
     ]
       

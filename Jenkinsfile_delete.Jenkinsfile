@@ -27,7 +27,7 @@ stages {
         
         stage('Delete Workspace') {
             steps {
-                bat 'cd&cd terraform/Terraform-Chef & terraform workspace delete terraform_50'                
+                bat 'cd&cd terraform/Terraform-Chef & terraform workspace delete terraform_51'                
             }
         }                                                                  
         }

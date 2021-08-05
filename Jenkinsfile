@@ -29,8 +29,8 @@ stages {
             steps {
                      bat 'cd&cd terraform/Terraform-Chef & terraform init -input=false'
                 bat 'cd&cd terraform/Terraform-Chef & terraform workspace list'
-                    bat 'cd&cd terraform/Terraform-Chef & terraform workspace new terraform_61'
-                bat 'cd&cd terraform/Terraform-Chef & terraform workspace select terraform_61'
+                    bat 'cd&cd terraform/Terraform-Chef & terraform workspace new terraform_62 || terraform workspace new terraform_63'
+                bat 'cd&cd terraform/Terraform-Chef & terraform workspace select terraform_62 || terraform workspace select terraform_63'
                 bat "cd&cd terraform/Terraform-Chef & terraform plan -input=false -out tfplan "
                 bat 'cd&cd terraform/Terraform-Chef & terraform show -no-color tfplan > tfplan.txt'
 

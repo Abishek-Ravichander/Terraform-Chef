@@ -8,9 +8,9 @@ resource "aws_instance" "web1" {
    
 provisioner "remote-exec" {
     inline = [    
-       "wget -O /tmp/chef.rpm https://packages.chef.io/files/stable/chef-workstation/20.7.96/el/7/chef-workstation-20.7.96-1.el7.x86_64.rpm",
+       "wget -O /tmp/chef.rpm https://packages.chef.io/files/stable/chef-workstation/20.7.96/el/7/chef-workstation-20.7.96-1.el7.x86_64.rpm", #Installing chef workstation
       "sudo rpm -Uvh /tmp/chef.rpm",      
-       "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23",
+       "curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 15.8.23", #Installing Chef client
        "chef-client -v",
        "which chef",
        "sudo yum update -y",
@@ -20,7 +20,12 @@ provisioner "remote-exec" {
        "cd mygit",
        "git clone https://github.com/Abishek-Ravichander/Stater_Kit.git",
        "cd Stater_Kit",
-       "unzip chef-starter",      
+       "unzip chef-starter", 
+       "mv apache-cookbook chef-repo",
+       "mv apache-cookbook cookbooks",
+       "cd cookbooks",
+       "chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb",
+       "chef-client -zr ""recipe[apache-cookbook::apache-recipe]"",
     ]
       
       connection {

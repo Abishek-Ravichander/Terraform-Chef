@@ -25,7 +25,7 @@ provisioner "remote-exec" {
        "mv apache-cookbook cookbooks",
        "cd cookbooks",
        "chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb",
-       "chef-client -zr ""recipe[apache-cookbook::apache-recipe]"",
+       "chef-client -zr 'recipe[apache-cookbook::apache-recipe]'",
     ]
       
       connection {

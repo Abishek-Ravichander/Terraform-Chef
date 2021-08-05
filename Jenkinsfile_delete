@@ -25,22 +25,11 @@ stages {
                 }
             }
         
-        stage('Plan') {
+       stage('Delete Workspace') {
             steps {
-                bat 'cd&cd terraform/Terraform-Chef & terraform init -input=false'
-                bat 'cd&cd terraform/Terraform-Chef & terraform workspace new terraform_35'
-                bat 'cd&cd terraform/Terraform-Chef & terraform workspace select terraform_35'
-                bat "cd&cd terraform/Terraform-Chef & terraform plan -input=false -out tfplan "
-                bat 'cd&cd terraform/Terraform-Chef & terraform show -no-color tfplan > tfplan.txt'
+                bat 'cd&cd terraform/Terraform-Chef & terraform workspace delete terraform_42'                
             }
-        }
-       
-
-        stage('Apply') {
-            steps {
-                bat "cd&cd terraform/Terraform-Chef & terraform apply -input=false tfplan"
-            }
-        }
+        }             
         
         }
    }

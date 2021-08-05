@@ -22,9 +22,11 @@ provisioner "remote-exec" {
        "cd Stater_Kit",
        "unzip chef-starter", 
        "mv apache-cookbook chef-repo",
+       "cd chef-repo",
        "mv apache-cookbook cookbooks",
        "cd cookbooks",
-       " yes | chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb -yes",
+       "chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb",
+       "echo yes",
        "chef-client -zr 'recipe[apache-cookbook::apache-recipe]'",
     ]
       

@@ -27,6 +27,7 @@ stages {
         
         stage('Plan') {
             steps {
+                     bat 'cd&cd terraform/Terraform-Chef & terraform init -input=false'
                 bat 'cd&cd terraform/Terraform-Chef & terraform workspace list'
                     bat 'cd&cd terraform/Terraform-Chef & terraform workspace new terraform_60'
                 bat 'cd&cd terraform/Terraform-Chef & terraform workspace select terraform_60'

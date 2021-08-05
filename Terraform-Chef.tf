@@ -16,6 +16,7 @@ provisioner "remote-exec" {
        "sudo yum update -y",
        "sudo yum install git -y",
        "git version",
+       "sudo su",
        "mkdir mygit",
        "cd mygit",
        "git clone https://github.com/Abishek-Ravichander/Stater_Kit.git",

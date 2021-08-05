@@ -34,7 +34,11 @@ stages {
                 bat "cd&cd terraform/Terraform-Chef & terraform plan -input=false -out tfplan "
                 bat 'cd&cd terraform/Terraform-Chef & terraform show -no-color tfplan > tfplan.txt'
 
-
+stage('Apply') {
+            steps {
+                bat "cd&cd terraform/Terraform-Chef & terraform apply -input=false tfplan"
+            }
+        }
 
                 
             }

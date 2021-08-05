@@ -15,8 +15,7 @@ provisioner "remote-exec" {
        "which chef",
        "sudo yum update -y",
        "sudo yum install git -y",
-       "git version",
-       "sudo su",
+       "git version",       
        "mkdir mygit",
        "cd mygit",
        "git clone https://github.com/Abishek-Ravichander/Stater_Kit.git",
@@ -27,6 +26,7 @@ provisioner "remote-exec" {
        "mv apache-cookbook cookbooks",
        "cd cookbooks",
        " printf 'yes\n' | chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb",       
+       "sudo su",
        "chef-client -zr \"recipe[apache-cookbook::apache-recipe]\"",
     ]
       

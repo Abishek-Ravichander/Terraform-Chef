@@ -33,14 +33,13 @@ stages {
                 bat 'cd&cd terraform/Terraform-Chef & terraform workspace select terraform_62 || terraform workspace select terraform_63'
                 bat "cd&cd terraform/Terraform-Chef & terraform plan -input=false -out tfplan "
                 bat 'cd&cd terraform/Terraform-Chef & terraform show -no-color tfplan > tfplan.txt'
-
-stage('Apply') {
-            steps {
-                bat "cd&cd terraform/Terraform-Chef & terraform apply -input=false tfplan"
+                
             }
         }
-
-                
+        
+        stage('Apply') {
+            steps {
+                bat "cd&cd terraform/Terraform-Chef & terraform apply -input=false tfplan"
             }
         }
         

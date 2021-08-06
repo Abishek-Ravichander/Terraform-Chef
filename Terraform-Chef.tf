@@ -5,7 +5,7 @@ resource "aws_instance" "web1" {
    vpc_security_group_ids = ["sg-0990c12803c100850"]
    key_name               = "Linux_Terraform-Chef"
    subnet_id       = "subnet-a24fd693"
-   private_ips     = ["172.31.48.10"]
+   private_ip     = "172.31.48.10"
    
   # network_interface {
    # device_index = 0

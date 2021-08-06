@@ -44,8 +44,9 @@ provisioner "remote-exec" {
   }
       
  }
-resource "aws_eip" "elastic_ip" {
-  vpc                       = true
+resource "aws_eip" "eip" {
+  instance = aws_instance.web1.id
+   vpc                       = true  
   network_interface         = aws_network_interface.web-server-nic.id
   associate_with_private_ip = "172.31.48.10"
  # depends_on = [    "igw-1fe83d65"  ]

@@ -5,6 +5,11 @@ resource "aws_instance" "web1" {
    vpc_security_group_ids = ["sg-0990c12803c100850"]
    key_name               = "Linux_Terraform-Chef"
    
+   network_interface {
+    device_index = 0
+    network_interface_id = aws_network_interface.web-server-nic.id
+  }
+   
    
 provisioner "remote-exec" {
     inline = [    

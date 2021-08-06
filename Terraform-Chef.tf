@@ -55,7 +55,7 @@ resource "aws_eip" "elastic_ip" {
 resource "aws_network_interface" "web-server-nic" {
   subnet_id       = "subnet-a24fd693"
   private_ips     = ["172.31.48.10"]
-  security_groups = ["sg-0990c12803c100850"]
+  #security_groups = ["sg-0990c12803c100850"]
 #172.31.48.0/20
   
 }

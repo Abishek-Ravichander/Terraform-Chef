@@ -29,7 +29,7 @@ stages {
             steps {
                      bat 'cd&cd terraform/Terraform-Chef & terraform init -input=false'
                      bat 'cd&cd terraform/Terraform-Chef & terraform workspace list'
-                     bat 'cd&cd terraform/Terraform-Chef & terraform destroy'
+                     bat 'cd&cd terraform/Terraform-Chef & terraform destroy -auto-approve'
                    // bat 'cd&cd terraform/Terraform-Chef & terraform workspace new terraform_63'
                 //bat 'cd&cd terraform/Terraform-Chef & terraform workspace select terraform_63'
                 bat "cd&cd terraform/Terraform-Chef & terraform plan -input=false -out tfplan "

@@ -7,10 +7,10 @@ resource "aws_instance" "web1" {
    subnet_id       = "subnet-a24fd693"
    private_ips     = ["172.31.48.10"]
    
-   network_interface {
-    device_index = 0
-    network_interface_id = aws_network_interface.web-server-nic.id
-  }
+  # network_interface {
+   # device_index = 0
+   # network_interface_id = aws_network_interface.web-server-nic.id
+  #}
    
    
 provisioner "remote-exec" {

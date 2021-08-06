@@ -58,7 +58,7 @@ resource "aws_eip" "eip" {
 resource "aws_eip_association" "eip_assoc" {
   #instance_id   = aws_instance.web1.id
    instance_id = aws_instance.web1[0].id
-  allocation_id = "eipalloc-015e1b87bad37cdb7"
+  allocation_id = "eipalloc-03c81abe9406c0125"
 }
 
 resource "aws_network_interface" "web-server-nic" {

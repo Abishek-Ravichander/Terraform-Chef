@@ -44,7 +44,7 @@ resource "aws_eip" "elastic_ip" {
   network_interface         = aws_network_interface.web-server-nic.id
   associate_with_private_ip = "172.31.48.0"
   depends_on = [
-    aws_internet_gateway.igw
+    "igw-1fe83d65"
   ]
   
 }

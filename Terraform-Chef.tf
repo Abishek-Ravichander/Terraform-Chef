@@ -2,8 +2,10 @@ resource "aws_instance" "web1" {
    ami           = "ami-0c2b8ca1dad447f8a"
    instance_type = "t2.micro"
    count = 1
-  # vpc_security_group_ids = ["sg-0990c12803c100850"]
+   vpc_security_group_ids = ["sg-0990c12803c100850"]
    key_name               = "Linux_Terraform-Chef"
+   subnet_id       = "subnet-a24fd693"
+   private_ips     = ["172.31.48.10"]
    
    network_interface {
     device_index = 0
@@ -47,17 +49,18 @@ provisioner "remote-exec" {
 resource "aws_eip" "eip" {
   instance = aws_instance.web1.id
    vpc                       = true  
-  network_interface         = aws_network_interface.web-server-nic.id
-  associate_with_private_ip = "172.31.48.10"
+  #network_interface         = aws_network_interface.web-server-nic.id
+  #associate_with_private_ip = "172.31.48.10"
  # depends_on = [    "igw-1fe83d65"  ]
   
 }
 
-resource "aws_network_interface" "web-server-nic" {
+'''resource "aws_network_interface" "web-server-nic" {
   subnet_id       = "subnet-a24fd693"
   private_ips     = ["172.31.48.10"]
   security_groups = ["sg-0990c12803c100850"]
 #172.31.48.0/20
   
-}
+}'''
+
 

@@ -55,6 +55,11 @@ resource "aws_eip" "eip" {
   
 }
 
+resource "aws_eip_association" "eip_assoc" {
+  #instance_id   = aws_instance.web.id
+  allocation_id = aws_eip.eip.id 
+}
+
 resource "aws_network_interface" "web-server-nic" {
   subnet_id       = "subnet-a24fd693"
   private_ips     = ["172.31.48.10"]

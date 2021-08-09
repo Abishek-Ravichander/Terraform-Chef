@@ -2,6 +2,7 @@ pipeline {
 environment {
         AWS_ACCESS_KEY_ID     = credentials('ABI_ACCESS_KEY')
         AWS_SECRET_ACCESS_KEY = credentials('ABI_SECRECT_KEY')
+        SECRET_FILE_ID = credentials('Linux_Terraform-Chef-PEM')
         AWS_DEFAULT_REGION = "us-east-1"
     }
 agent  any
@@ -14,6 +15,7 @@ stages {
                             git "https://github.com/Abishek-Ravichander/Terraform-Chef.git"
                         
                     }
+                    bat "powershell Copy-Item ${SECRET_FILE_ID} -Destination src\\main\\resources"
                 }
             }
         stage('AWS Connection Check') {

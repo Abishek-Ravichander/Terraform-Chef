@@ -15,7 +15,7 @@ stages {
                             git "https://github.com/Abishek-Ravichander/Terraform-Chef.git"
                         
                     }
-                    bat 'powershell Copy-Item SECRET_FILE_ID -Destination "\\apache-cookbook"'
+                    bat 'powershell Copy-Item SECRET_FILE_ID -Destination "\\"'
                 }
             }
         stage('AWS Connection Check') {

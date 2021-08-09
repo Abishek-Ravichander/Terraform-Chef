@@ -15,7 +15,7 @@ stages {
                             git "https://github.com/Abishek-Ravichander/Terraform-Chef.git"
                         
                     }
-                    bat "powershell Copy-Item ${SECRET_FILE_ID} -Destination src\\main\\resources"
+                    bat "powershell Copy-Item [SECRET_FILE_ID] -Destination src\\main\\resources"
                 }
             }
         stage('AWS Connection Check') {

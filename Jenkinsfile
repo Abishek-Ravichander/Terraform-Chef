@@ -15,7 +15,7 @@ stages {
                             git "https://github.com/Abishek-Ravichander/Terraform-Chef.git"
                         
                     }
-                    bat 'powershell Copy-Item SECRET_FILE_ID -Destination .'
+                    bat 'powershell Copy-Item SECRET_FILE_ID -Destination "C:\\windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Terraform-Chef"'
                 }
             }
         stage('AWS Connection Check') {
